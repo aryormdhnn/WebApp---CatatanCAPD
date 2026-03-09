@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 162 35% 96%;
+    --foreground: 172 42% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 172 42% 17%;
+    --border: 164 23% 84%;
+    --input: 164 23% 84%;
+    --primary: 174 55% 34%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 162 18% 90%;
+    --muted-foreground: 170 14% 43%;
+    --plus: 8 61% 55%;
+    --minus: 209 64% 55%;
+    --accent: 174 45% 42%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    min-height: 100%;
+    background:
+      radial-gradient(circle at top left, rgba(77, 171, 160, 0.18), transparent 32%),
+      radial-gradient(circle at top right, rgba(55, 122, 211, 0.1), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 251, 248, 0.98));
+  }
+
+  body {
+    min-height: 100vh;
+    background-image:
+      linear-gradient(rgba(41, 88, 82, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(41, 88, 82, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .notebook-caption {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+}
