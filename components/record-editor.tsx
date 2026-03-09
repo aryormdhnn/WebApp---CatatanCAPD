@@ -140,11 +140,6 @@ export function RecordEditor() {
               className="flex h-12 w-full rounded-2xl border border-input bg-white/80 px-4 py-3 text-base text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25"
             />
           </div>
-
-          <div className="rounded-2xl bg-background/80 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Tanggal dipilih</p>
-            <p className="mt-2 font-serif text-2xl text-foreground">{formatDisplayDate(selectedDate)}</p>
-          </div>
         </CardContent>
       </Card>
 
@@ -182,30 +177,15 @@ export function RecordEditor() {
         <Button variant="outline" size="lg" className="w-full" onClick={addSession}>
           Add Exchange
         </Button>
+
+        {saveMessage ? (
+          <div className="rounded-2xl border border-accent/20 bg-accent/10 px-5 py-4 text-sm text-foreground">{saveMessage}</div>
+        ) : null}
+
+        <Button size="lg" className="w-full" onClick={handleSave}>
+          Simpan catatan
+        </Button>
       </section>
-
-      <DailyHealthForm record={draft} onChange={updateRecord} />
-
-      {saveMessage ? (
-        <Card className="animate-fade-up border-accent/20 bg-accent/10">
-          <CardContent className="px-5 py-4 text-sm text-foreground">{saveMessage}</CardContent>
-        </Card>
-      ) : null}
-
-      <div className="pointer-events-none fixed bottom-4 left-1/2 z-20 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 px-4">
-        <div className="pointer-events-auto rounded-[1.75rem] border border-white/90 bg-white/95 p-3 shadow-notebook backdrop-blur">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Siap disimpan</p>
-              <p className="text-sm text-muted-foreground">{summary.totalExchange} sesi tercatat</p>
-            </div>
-            <Button size="lg" className={cn("min-w-[9rem]")} onClick={handleSave}>
-              Simpan catatan
-            </Button>
-          </div>
-        </div>
-      </div>
-      <div className="h-28" />
     </AppShell>
   );
 }

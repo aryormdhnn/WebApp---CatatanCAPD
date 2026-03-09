@@ -58,39 +58,22 @@ export default function DashboardPage() {
         <SummaryCard label="Total exchange" value={`${summary.totalExchange} sesi`} hint={todayRecord ? "Data hari ini sudah tersedia." : "Belum ada sesi untuk hari ini."} />
       </section>
 
-      <section className="space-y-4">
-        {recentRecords.length === 0 ? (
-          <EmptyState
-            title="Belum ada catatan CAPD"
-            description="Mulai dengan catatan harian kosong, atau muat data contoh untuk melihat alur dashboard, history, dan detail harian."
-            actions={
-              <>
-                <Link href={`/record?date=${today}`} className={buttonVariants({ variant: "default", size: "lg" })}>
-                  Buat catatan hari ini
-                </Link>
-                <Button variant="outline" size="lg" onClick={loadDemoData}>
-                  Muat dummy data
-                </Button>
-              </>
-            }
-          />
-        ) : (
-          <>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="notebook-caption">Riwayat terbaru</p>
-                <h2 className="mt-1 font-serif text-2xl text-foreground">Catatan terakhir</h2>
-              </div>
-              <Link href="/history" className={buttonVariants({ variant: "ghost", size: "sm" })}>
-                Lihat semua
-              </Link>
+      {recentRecords.length > 0 && (
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="notebook-caption">Riwayat terbaru</p>
+              <h2 className="mt-1 text-2xl font-semibold text-foreground">Catatan terakhir</h2>
             </div>
-            {recentRecords.map((record) => (
-              <RecordListItem key={record.id} record={record} />
-            ))}
-          </>
-        )}
-      </section>
+            <Link href="/history" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+              Lihat semua
+            </Link>
+          </div>
+          {recentRecords.map((record) => (
+            <RecordListItem key={record.id} record={record} />
+          ))}
+        </section>
+      )}
     </AppShell>
   );
 }

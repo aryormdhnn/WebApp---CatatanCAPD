@@ -19,7 +19,7 @@ export function RecordListItem({ record }: RecordListItemProps) {
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Catatan harian</p>
-              <h3 className="mt-1 font-serif text-xl text-foreground">{formatDisplayDate(record.date)}</h3>
+              <h3 className="mt-1 text-xl font-semibold text-foreground">{formatDisplayDate(record.date)}</h3>
             </div>
             <Badge className="border border-accent/20 bg-accent/10 text-accent">{summary.totalExchange} sesi</Badge>
           </div>

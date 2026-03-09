@@ -33,7 +33,7 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
           ) : null}
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-5 px-5">
         <div className="space-y-2">
           <Label htmlFor={`konsentrat-${session.id}`}>Konsentrat</Label>
           <select
@@ -50,7 +50,7 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
           </select>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-[1fr_1fr] gap-4">
           <NumberInput
             id={`masuk-${session.id}`}
             label="Volume masuk"
@@ -62,7 +62,7 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
           <TimeInput id={`jam-masuk-${session.id}`} label="Jam masuk" value={session.jamMasuk} onChange={(value) => onChange(session.id, { jamMasuk: value })} />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-[1fr_1fr] gap-4">
           <NumberInput
             id={`keluar-${session.id}`}
             label="Volume keluar"
@@ -86,17 +86,6 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
             placeholder="Contoh: jernih"
             value={session.warnaCairan}
             onChange={(event) => onChange(session.id, { warnaCairan: event.target.value })}
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor={`catatan-${session.id}`}>Catatan sesi</Label>
-          <Textarea
-            id={`catatan-${session.id}`}
-            placeholder="Opsional"
-            className="min-h-24"
-            value={session.catatanSesi}
-            onChange={(event) => onChange(session.id, { catatanSesi: event.target.value })}
           />
         </div>
       </CardContent>

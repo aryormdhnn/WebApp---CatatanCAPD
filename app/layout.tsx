@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope, Newsreader } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
 import "./globals.css";
 
-const fontSans = Manrope({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const fontSerif = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontSerif.variable} bg-background font-sans text-foreground antialiased`}>
+      <body className={`${fontSans.variable} bg-background font-sans text-foreground antialiased`}>
         {children}
       </body>
     </html>

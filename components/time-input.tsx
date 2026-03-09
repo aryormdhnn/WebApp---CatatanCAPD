@@ -12,7 +12,7 @@ export function TimeInput({ id, label, value, onChange }: TimeInputProps) {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>{label}</Label>
-      <Input id={id} type="time" value={value} onChange={(event) => onChange(event.target.value)} />
+      <Input id={id} type="time" className="pr-3" value={value} onChange={(event) => onChange(event.target.value)} />
     </div>
   );
 }
