@@ -65,9 +65,11 @@ export function createEmptyExchangeSession(dailyRecordId: string): ExchangeSessi
     dailyRecordId,
     konsentratPercent: "1.5%",
     volumeMasukMl: null,
-    jamMasuk: "",
+    jamMasukMulai: "",
+    jamMasukSelesai: "",
     volumeKeluarMl: null,
-    jamKeluar: "",
+    jamKeluarMulai: "",
+    jamKeluarSelesai: "",
     warnaCairan: "",
     catatanSesi: "",
   };
@@ -99,9 +101,11 @@ export function cloneRecord(record: DailyRecord): DailyRecord {
 export function isSessionBlank(session: ExchangeSession) {
   return (
     session.volumeMasukMl === null &&
-    session.jamMasuk === "" &&
+    session.jamMasukMulai === "" &&
+    session.jamMasukSelesai === "" &&
     session.volumeKeluarMl === null &&
-    session.jamKeluar === "" &&
+    session.jamKeluarMulai === "" &&
+    session.jamKeluarSelesai === "" &&
     session.warnaCairan.trim() === "" &&
     session.catatanSesi.trim() === ""
   );

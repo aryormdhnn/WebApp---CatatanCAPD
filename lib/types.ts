@@ -7,9 +7,11 @@ export interface ExchangeSession {
   dailyRecordId: string;
   konsentratPercent: KonsentratPercent;
   volumeMasukMl: number | null;
-  jamMasuk: string;
+  jamMasukMulai: string;
+  jamMasukSelesai: string;
   volumeKeluarMl: number | null;
-  jamKeluar: string;
+  jamKeluarMulai: string;
+  jamKeluarSelesai: string;
   warnaCairan: string;
   catatanSesi: string;
 }

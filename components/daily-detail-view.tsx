@@ -83,12 +83,12 @@ export function DailyDetailView() {
                 <div>
                   <p className="text-muted-foreground">Masuk</p>
                   <p className="font-semibold text-foreground">{formatMl(session.volumeMasukMl ?? 0)}</p>
-                  <p className="text-muted-foreground">{session.jamMasuk || "-"}</p>
+                  <p className="text-muted-foreground">{session.jamMasukMulai || "-"} s/d {session.jamMasukSelesai || "-"}</p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">Keluar</p>
                   <p className="font-semibold text-foreground">{formatMl(session.volumeKeluarMl ?? 0)}</p>
-                  <p className="text-muted-foreground">{session.jamKeluar || "-"}</p>
+                  <p className="text-muted-foreground">{session.jamKeluarMulai || "-"} s/d {session.jamKeluarSelesai || "-"}</p>
                 </div>
               </div>
 

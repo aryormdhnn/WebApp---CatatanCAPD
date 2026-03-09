@@ -50,7 +50,7 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
           </select>
         </div>
 
-        <div className="grid grid-cols-[1fr_1fr] gap-4">
+        <div className="grid grid-cols-[1fr_1fr_1fr] gap-4">
           <NumberInput
             id={`masuk-${session.id}`}
             label="Volume masuk"
@@ -59,10 +59,21 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
             value={session.volumeMasukMl}
             onChange={(value) => onChange(session.id, { volumeMasukMl: value })}
           />
-          <TimeInput id={`jam-masuk-${session.id}`} label="Jam masuk" value={session.jamMasuk} onChange={(value) => onChange(session.id, { jamMasuk: value })} />
+          <TimeInput
+            id={`jam-masuk-mulai-${session.id}`}
+            label="Mulai masuk"
+            value={session.jamMasukMulai}
+            onChange={(value) => onChange(session.id, { jamMasukMulai: value })}
+          />
+          <TimeInput
+            id={`jam-masuk-selesai-${session.id}`}
+            label="Selesai masuk"
+            value={session.jamMasukSelesai}
+            onChange={(value) => onChange(session.id, { jamMasukSelesai: value })}
+          />
         </div>
 
-        <div className="grid grid-cols-[1fr_1fr] gap-4">
+        <div className="grid grid-cols-[1fr_1fr_1fr] gap-4">
           <NumberInput
             id={`keluar-${session.id}`}
             label="Volume keluar"
@@ -72,10 +83,16 @@ export function ExchangeCard({ index, session, onChange, onRemove, canRemove }: 
             onChange={(value) => onChange(session.id, { volumeKeluarMl: value })}
           />
           <TimeInput
-            id={`jam-keluar-${session.id}`}
-            label="Jam keluar"
-            value={session.jamKeluar}
-            onChange={(value) => onChange(session.id, { jamKeluar: value })}
+            id={`jam-keluar-mulai-${session.id}`}
+            label="Mulai keluar"
+            value={session.jamKeluarMulai}
+            onChange={(value) => onChange(session.id, { jamKeluarMulai: value })}
+          />
+          <TimeInput
+            id={`jam-keluar-selesai-${session.id}`}
+            label="Selesai keluar"
+            value={session.jamKeluarSelesai}
+            onChange={(value) => onChange(session.id, { jamKeluarSelesai: value })}
           />
         </div>
 
